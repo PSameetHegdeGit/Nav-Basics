@@ -396,6 +396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 457133223}
+  - component: {fileID: 457133224}
   m_Layer: 0
   m_Name: Agents
   m_TagString: Untagged
@@ -422,6 +423,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &457133224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457133222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75ec79a4d6954db7af204014629eab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &513807819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -763,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 4943223066066332020, guid: 91d5c26b191662b4286f6ea1df5a2a91,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4943223066066332020, guid: 91d5c26b191662b4286f6ea1df5a2a91,
         type: 3}
@@ -906,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 4943223066066332022, guid: 91d5c26b191662b4286f6ea1df5a2a91,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.703224
+      value: -28.01
       objectReference: {fileID: 0}
     - target: {fileID: 4943223066066332022, guid: 91d5c26b191662b4286f6ea1df5a2a91,
         type: 3}
@@ -1139,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: 4943223066066332020, guid: 91d5c26b191662b4286f6ea1df5a2a91,
         type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4943223066066332020, guid: 91d5c26b191662b4286f6ea1df5a2a91,
         type: 3}

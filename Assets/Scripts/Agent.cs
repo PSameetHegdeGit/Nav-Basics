@@ -17,12 +17,14 @@ public class Agent : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetMouseButton(0))
         {
             Ray toClickedPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit infoForRay;
+
+            Pause.setAgentsVelocity = 0;
 
             if(Physics.Raycast(toClickedPoint, out infoForRay, 100, clickable))
             {
