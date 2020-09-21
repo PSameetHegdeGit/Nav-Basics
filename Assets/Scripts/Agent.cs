@@ -13,6 +13,7 @@ public class Agent : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        print(Pause.setAgentsVelocity);
     }
 
     // Update is called once per frame
@@ -25,9 +26,25 @@ public class Agent : MonoBehaviour
 
             if(Physics.Raycast(toClickedPoint, out infoForRay, 100, clickable))
             {
-                agent.SetDestination(infoForRay.point);
+                Vector3 agentDestination = infoForRay.point + Random.insideUnitSphere * 0.5f;
+                agentDestination.y = 0;
+                print(agentDestination);
+                agent.SetDestination(agentDestination);
+           
             }
             
+        }
+
+        if (Pause.setAgentsVelocity == 0)
+        {
+            if (agent.velocity == Vector3.zero)
+            {
+                Pause.setAgentsVelocity = 1;
+            }
+        }
+        else if (Pause.setAgentsVelocity == 1)
+        {
+            agent.velocity = Vector3.zero;
         }
     }
 }
