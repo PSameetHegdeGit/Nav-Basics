@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class Agent : MonoBehaviour
 {
-    public Transform target;
+    public LayerMask clickable;
+   
     private NavMeshAgent agent;
 
     // Start is called before the first frame update
@@ -17,6 +18,16 @@ public class Agent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
+        if (Input.GetMouseButton(0))
+        {
+            Ray toClickedPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit infoForRay;
+
+            if(Physics.Raycast(toClickedPoint, out infoForRay, 100, clickable))
+            {
+                agent.SetDestination(infoForRay.point);
+            }
+            
+        }
     }
 }
