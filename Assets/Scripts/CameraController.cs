@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
    
     void Update()
     {
-        if (!Input.GetKey(KeyCode.LeftControl))
+        if (!Input.GetKey(KeyCode.LeftControl)&& !Input.GetKey(KeyCode.LeftCommand))
         {
             var movement = Camera.main.transform.right * Input.GetAxis("Horizontal");
             var verticalMovement = Input.GetAxis("Vertical");
@@ -19,32 +19,15 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - .1f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + .1f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
         }
-        /*
-        float xAxis = Input.GetAxis("Horizontal");
-        float zAxis = Input.GetAxis("Vertical");
-        float yAxis = 0.0f;
+     
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            yAxis = -1;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            yAxis = 1;
-        }
-        if (!Input.GetKey(KeyCode.LeftControl))
-        {
-            transform.position = new Vector3(transform.position.x + xAxis, transform.position.y + yAxis, transform.position.z + zAxis);
-        }
-            */
-
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand))
         {
             if (Input.GetKey(KeyCode.W))
             {
