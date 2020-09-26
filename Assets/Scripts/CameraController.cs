@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
             var temp = Camera.main.transform.forward;
             temp.y = 0;
             movement += temp.normalized * verticalMovement;
-            transform.position += movement / 10;
+            transform.position += movement;
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
