@@ -1094,6 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abfc9c820f5b48358350532acb44917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adversaryParent: {fileID: 1756295377}
   selectableTag: selected
   layer: ground
 --- !u!1 &484801699
@@ -3473,6 +3474,8 @@ MonoBehaviour:
   selectableTag: selectedAdversary
   layer: ground
   selected: 0
+  adversary: {fileID: 0}
+  parentOfSelectedObjects: {fileID: 457133222}
 --- !u!135 &1756295380
 SphereCollider:
   m_ObjectHideFlags: 0

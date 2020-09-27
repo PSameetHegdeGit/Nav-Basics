@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class SelectedObjects : MonoBehaviour
 {
     public ArrayList selectedAgents;
+    private Adversary adversary;
+    public GameObject adversaryParent;
 
     public string selectableTag = "selected";
     public string layer = "ground";
@@ -14,6 +16,7 @@ public class SelectedObjects : MonoBehaviour
     {
 
         selectedAgents = new ArrayList();
+        adversary = adversaryParent.GetComponent<Adversary>();
     }
 
     void Update()
@@ -60,6 +63,14 @@ public class SelectedObjects : MonoBehaviour
 
     void Select(Transform selection)
     {
+        if (selectedAgents.Count == 0)
+        {
+            if(adversary.adversary != null)
+            {
+                adversary.adversary.GetComponent<Renderer>().material.color = Color.yellow;
+                adversary.adversary = null;
+            }
+        }
 
         var selectedNavMeshAgent = selection.GetComponent<NavMeshAgent>();
         selection.GetComponent<Renderer>().material.color = Color.red;
@@ -77,7 +88,7 @@ public class SelectedObjects : MonoBehaviour
 
     }
 
-    void DeselectAll()
+    public void DeselectAll()
     {
 
         print("in escape");

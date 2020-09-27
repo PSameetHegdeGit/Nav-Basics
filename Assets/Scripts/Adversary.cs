@@ -10,12 +10,16 @@ public class Adversary : MonoBehaviour
     public string selectableTag = "selectedAdversary";
     public string layer = "ground";
     public bool selected;
-    private NavMeshAgent adversary = null;
+    public NavMeshAgent adversary = null;
+    public GameObject parentOfSelectedObjects;
+    private SelectedObjects selectedObjects;
 
     // Start is called before the first frame update
     void Start()
     {
         selected = false;
+
+        selectedObjects = parentOfSelectedObjects.GetComponent<SelectedObjects>();
     }
 
     // Update is called once per frame
@@ -43,7 +47,7 @@ public class Adversary : MonoBehaviour
 
 
                 }
-                else if (selection.CompareTag(layer))
+                else if (selection.CompareTag(layer) && adversary != null)
                 {
                     if (selected)
                     {
@@ -75,6 +79,7 @@ public class Adversary : MonoBehaviour
         selection.GetComponent<Renderer>().material.color = Color.red;
         selected = true;
         adversary = selectedNavMeshAgent;
+        selectedObjects.DeselectAll();
     }
 
 
