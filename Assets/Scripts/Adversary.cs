@@ -61,6 +61,9 @@ public class Adversary : MonoBehaviour
 
         }
 
+    
+
+
     }
 
     void Deselect(Transform selection)
@@ -90,5 +93,10 @@ public class Adversary : MonoBehaviour
         adversary.SetDestination(agentDestination);
         
     }
+
+
+
+
+
 
 }
