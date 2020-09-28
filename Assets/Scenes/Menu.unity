@@ -282,10 +282,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Instructions For Moving Objects: \n\nCan Select Agents (Cylinders), Adversary
-    (Sphere), or Movable Objects(yellow cubes)\n\nMove Selected Agents or Selected
-    Adversary with Mouse Click\n\nMove Selected Movable Objects with Arrow Keys\n\nCan
-    Select Either Agents or Adversary; Can Select Movable Objects and Agents or Movable
-    Objects and Adversary\n"
+    (Sphere), or Movable Objects(yellow cubes) with left mouse click\n\nMove Selected
+    Agents or Selected Adversary with right mouse click\n\nMove Selected Movable Objects
+    with Arrow Keys\n\nCan Select Either Agents or Adversary; Can Select Movable Objects
+    and Agents or Movable Objects and Adversary\n"
 --- !u!222 &1264799304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Instructions For Camera: \n\nMove Horizontally Along Relative Axis with
-    a,s,w,d\nLeft-Shift: Move Up  \nSpace: Move Down\nRotate: \nMac: Left cmd + a,w,s,d\nWindows:
+    a,s,w,d\nLeft-Shift: Move Down  \nSpace: Move Up\nRotate: \nMac: Left cmd + a,w,s,d\nWindows:
     Left ctrl + a,w,s,d"
 --- !u!222 &2101773073
 CanvasRenderer:
