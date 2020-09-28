@@ -16,7 +16,6 @@ public class DynamicObstacle : MonoBehaviour
         {
             if (gameObject.transform.localPosition.x < lowerLimit)
             {
-                print("switching lower");
                 switchDirection = false;
             }
             else if (gameObject.transform.localPosition.x > upperLimit)
