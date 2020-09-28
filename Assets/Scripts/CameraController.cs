@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
    
     void Update()
     {
-        if (!Input.GetKey(KeyCode.LeftControl)&& !Input.GetKey(KeyCode.LeftCommand))
+        if (!Input.GetKey(KeyCode.CapsLock))
         {
             var movement = Camera.main.transform.right * Input.GetAxis("Horizontal");
             var verticalMovement = Input.GetAxis("Vertical");
@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
         }
      
 
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand))
+        if (Input.GetKey(KeyCode.CapsLock))
         {
             if (Input.GetKey(KeyCode.W))
             {

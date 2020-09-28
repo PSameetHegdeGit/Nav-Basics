@@ -815,8 +815,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Instructions For Camera: \n\nMove Horizontally Along Relative Axis with
-    a,s,w,d\nLeft-Shift: Move Down  \nSpace: Move Up\nRotate: \nMac: Left cmd + a,w,s,d\nWindows:
-    Left ctrl + a,w,s,d"
+    a,s,w,d\nLeft-Shift: Move Down  \nSpace: Move Up\nRotate: \nHold Caps Lock + a,w,s,d"
 --- !u!222 &2101773073
 CanvasRenderer:
   m_ObjectHideFlags: 0
