@@ -13,6 +13,8 @@ public class SelectedObjects : MonoBehaviour
     public string selectableTag = "selected";
     public string layer = "ground";
 
+    private Vector3 targetPosition;
+
     void Start()
     {
 
@@ -69,6 +71,8 @@ public class SelectedObjects : MonoBehaviour
             DeselectAll();
         }
 
+
+        StartCoroutine("haltAgents");
     
     }
 
@@ -120,14 +124,40 @@ public class SelectedObjects : MonoBehaviour
 
     void move(RaycastHit positionToMove, ArrayList agents)
     {
+
         foreach (NavMeshAgent agent in agents)
         {
-            Vector3 agentDestination = positionToMove.point + Random.insideUnitSphere * .02f;
+            Vector3 agentDestination = positionToMove.point + Random.insideUnitSphere * 0.02f;
             agentDestination.y = 0;
             agent.SetDestination(agentDestination);
         }
 
-     
+        targetPosition = positionToMove.point;
+
+
+    }
+
+    void haltAgents()
+    {
+
+
+        if(targetPosition != null)
+        {
+
+            foreach(NavMeshAgent agent in selectedAgents)
+            {
+               if(Vector3.Distance(targetPosition, agent.transform.position) <= 3f)
+                {
+                    agent.velocity = Vector3.zero;
+
+                }
+            }
+
+
+        }
+
+
+
 
     }
 
