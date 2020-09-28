@@ -44,23 +44,32 @@ public class SelectedObjects : MonoBehaviour
 
 
                 }
-                else if (selection.CompareTag(layer))
-                {
-
-                    move(hit, selectedAgents);
-                }
-
+              
             }
 
         }
 
+        if (Input.GetMouseButtonUp(1))
+        {
+
+            Ray clickedPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(clickedPoint, out hit))
+            {
+                move(hit, selectedAgents);
+
+            }
+        }
+
+   
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             DeselectAll();
         }
 
-        StartCoroutine(haltAgents());
+    
     }
 
 
@@ -113,7 +122,7 @@ public class SelectedObjects : MonoBehaviour
     {
         foreach (NavMeshAgent agent in agents)
         {
-            Vector3 agentDestination = positionToMove.point;
+            Vector3 agentDestination = positionToMove.point + Random.insideUnitSphere * .02f;
             agentDestination.y = 0;
             agent.SetDestination(agentDestination);
         }
@@ -121,61 +130,6 @@ public class SelectedObjects : MonoBehaviour
      
 
     }
-
-
-
-    IEnumerator haltAgents()
-    {
-        if (selectedAgents.Count > 0)
-        {
-            NavMeshAgent first;
-            while (true)
-            {
-                yield return null;
-                foreach (NavMeshAgent agent in selectedAgents)
-                {
-                    if (agent.velocity == Vector3.zero)
-                    {
-                        first = agent;
-                        break;
-                    }
-                }
-
-            
-            }
-
-            while (true)
-            {
-                yield return null;
-                foreach(NavMeshAgent agent in selectedAgents)
-                {
-                    if(Vector3.Distance(agent.transform.position, first.transform.position) <= 10f)
-                    {
-                        agent.velocity = Vector3.zero;
-                    }
-                }
-
-                var count = selectedAgents.Count;
-
-                foreach(NavMeshAgent agent in selectedAgents)
-                {
-                    if(agent.velocity == Vector3.zero)
-                    {
-                        count--;
-                    }
-                }
-                if(count == 0)
-                {
-                    break;
-                }
-            }
-
-        }
-         
-    }
-
-
-
 
 
 
