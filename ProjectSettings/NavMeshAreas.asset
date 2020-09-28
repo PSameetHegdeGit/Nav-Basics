@@ -17,8 +17,8 @@ NavMeshProjectSettings:
     cost: 200
   - name: Fire
     cost: 300
-  - name: 
-    cost: 1
+  - name: Dirt
+    cost: 50
   - name: 
     cost: 1
   - name: 
