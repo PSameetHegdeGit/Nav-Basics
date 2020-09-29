@@ -47,19 +47,30 @@ public class Adversary : MonoBehaviour
 
 
                 }
-                else if (selection.CompareTag(layer) && adversary != null)
-                {
-                    if (selected)
-                    {
-                        move(hit);
-
-                    }
-
-                }
+               
 
             }
 
         }
+
+        if (Input.GetMouseButtonUp(1)){
+
+            Ray clickedPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(clickedPoint, out hit))
+            {
+                var selection = hit.transform;
+
+                if (selection.CompareTag(layer) && adversary != null)
+                {
+                    move(hit);
+                }
+
+            }       
+
+        }
+         
 
     
 
